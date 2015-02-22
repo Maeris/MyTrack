@@ -51,13 +51,13 @@ public class MyTrackActivity extends ActionBarActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         switch (position) {
             case 0:
-                fragment = ActiviteFragment.newInstance();
+                fragment = new ActiviteFragment();
                 break;
             case 1:
                 fragment = HistoriqueFragment.newInstance();
                 break;
             default:
-                fragment = ActiviteFragment.newInstance();
+                fragment = new ActiviteFragment();
                 break;
         }
         fragmentManager.beginTransaction()

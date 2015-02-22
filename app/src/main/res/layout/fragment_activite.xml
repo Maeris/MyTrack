@@ -11,22 +11,21 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/vitesse"
+            android:id="@+id/durée"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="6dp"
-            android:text="@string/vitesse"
+            android:text="@string/duree"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
+        <Chronometer
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_margin="6dp"
-            android:text="@string/default_vitesse"
-            android:id="@+id/vitesseNb" />
+            android:id="@+id/dureeNb" />
 
         <LinearLayout
             android:id="@+id/infosMineures"
@@ -45,12 +44,12 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
-                android:id="@+id/vitesseMoyenne"
+                android:id="@+id/vitesse"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/vitesse_moyenne"
+                android:text="@string/vitesse"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 
@@ -71,12 +70,12 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <TextView
-                android:id="@+id/vitesseMoyenneNb"
+                android:id="@+id/vitesseNb"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/default_vitesse_moyenne"
+                android:text="@string/default_vitesse"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
     </LinearLayout>
@@ -91,14 +90,16 @@
 
     <Button
         android:id="@+id/activite_button"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="2dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:background="@color/green_button"
         android:text="@string/commencer_activite" />
 
 </RelativeLayout>

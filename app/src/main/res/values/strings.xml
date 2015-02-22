@@ -11,8 +11,11 @@
     <string name="distance">Distance parcourue</string>
     <string name="commencer_activite">Commencer l\'activité</string>
     <string name="terminer_activite">Terminer l\'activité</string>
-    <string name="default_vitesse">0 km/h</string>
-    <string name="default_distance">0 km</string>
+    <string name="default_vitesse">0.0 km/h</string>
+    <string name="default_distance">0.0 m</string>
     <string name="default_vitesse_moyenne">0 km/h</string>
-
+    <string name="duree">Durée</string>
+    <string name="default_duree">00:00:00</string>
+    <string name="demarrage_activite" type="id">Demarrage de l\'activité</string>
+    <string name="fin_activite" type="id">Fin de l\'activité</string>
 </resources>
