@@ -171,6 +171,8 @@ public class ActiviteFragment extends Fragment implements
         // TODO Ajouter données dans BDD
         isActivite = false;
         duree.stop();
+        // TODO
+        // long elapsedMillis = SystemClock.elapsedRealtime() - chronometerInstance.getBase();
         stopLocationUpdates();
         Toast.makeText(getActivity().getApplicationContext(), getResources().getText(R.string.fin_activite), Toast.LENGTH_SHORT).show();
     }

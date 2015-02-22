@@ -1,5 +1,8 @@
 package com.epitech.mytrack;
 
+import com.google.android.gms.maps.model.LatLng;
+
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -11,13 +14,15 @@ public class Track {
     private Double vitMax;
     private Double distance;
     private Double time;
-    private String startPoint;
-    private String endPoint;
+    private LatLng startPoint;
+    private LatLng endPoint;
+
+    private String date;
 
     public Track() {
     }
 
-    public Track(Double vitMoyenne, Double vitMax, Double distance, Double time, String startPoint, String endPoint)
+    public Track(Double vitMoyenne, Double vitMax, Double distance, Double time, LatLng startPoint, LatLng endPoint, String date)
     {
         this.vitMoyenne = vitMoyenne;
         this.vitMax = vitMax;
@@ -25,6 +30,7 @@ public class Track {
         this.time = time;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
+        this.date = date;
     }
 
     public HashMap<String, String> hashMap()
@@ -34,8 +40,9 @@ public class Track {
         map.put("vitMax", vitMax.toString());
         map.put("distance", distance.toString());
         map.put("time", time.toString());
-        map.put("startPoint", startPoint);
-        map.put("endPoint", endPoint);
+        map.put("startPoint", startPoint.toString());
+        map.put("endPoint", endPoint.toString());
+        map.put("date", date);
         return map;
     }
 
@@ -43,11 +50,11 @@ public class Track {
         this.vitMoyenne = vitMoyenne;
     }
 
-    public void setEndPoint(String endPoint) {
+    public void setEndPoint(LatLng endPoint) {
         this.endPoint = endPoint;
     }
 
-    public void setStartPoint(String startPoint) {
+    public void setStartPoint(LatLng startPoint) {
         this.startPoint = startPoint;
     }
 
@@ -59,11 +66,11 @@ public class Track {
         this.vitMax = vitMax;
     }
 
-    public String getEndPoint() {
+    public LatLng getEndPoint() {
         return endPoint;
     }
 
-    public String getStartPoint() {
+    public LatLng getStartPoint() {
         return startPoint;
     }
 
@@ -77,5 +84,21 @@ public class Track {
 
     public Double getVitMoyenne() {
         return vitMoyenne;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Double getTime() {
+        return time;
+    }
+
+    public void setTime(Double time) {
+        this.time = time;
     }
 }
