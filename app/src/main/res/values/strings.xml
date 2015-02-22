@@ -24,6 +24,7 @@
     <!-- Histo -->
     <string name="histo_startPoint">Depart : </string>
     <string name="histo_endPoint">Fin : </string>
+    <string name="histo_date">Date : </string>
     <string name="histo_time">Temps : </string>
     <string name="histo_vitMoy">Vit. Moyenne : </string>
     <string name="histo_vitMax">Vit. Maximum : </string>
