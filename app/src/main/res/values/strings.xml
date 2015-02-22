@@ -6,7 +6,13 @@
     <string name="title_section2">Historique</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
-    <string name="action_settings">Settings</string>
+    <string name="vitesse">Vitesse</string>
+    <string name="vitesse_moyenne">Vitesse moyenne</string>
+    <string name="distance">Distance parcourue</string>
+    <string name="commencer_activite">Commencer l\'activité</string>
+    <string name="terminer_activite">Terminer l\'activité</string>
+    <string name="default_vitesse">0 km/h</string>
+    <string name="default_distance">0 km</string>
+    <string name="default_vitesse_moyenne">0 km/h</string>
 
 </resources>
