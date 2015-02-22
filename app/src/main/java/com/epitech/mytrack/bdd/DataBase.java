@@ -16,6 +16,8 @@ import java.util.ArrayList;
  */
 public class DataBase extends SQLiteOpenHelper {
     private SQLiteDatabase bdd;
+    public static final int BDD_VERSION = 1;
+    public static final String BDD_NAME = "My_Track_BDD";
 
     public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
