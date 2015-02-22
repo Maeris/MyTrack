@@ -177,9 +177,11 @@ public class ActiviteFragment extends Fragment implements
         // TODO
         // long elapsedMillis = SystemClock.elapsedRealtime() - chronometerInstance.getBase();
 
-        Double time = Double.valueOf(SystemClock.elapsedRealtime() - duree.getBase() / 1000 /3600);
+        Double time = Double.valueOf((SystemClock.elapsedRealtime() - duree.getBase()) / 1000 /3600);
         Double vitesseMoyenne = Double.valueOf(distanceNb / (SystemClock.elapsedRealtime() - duree.getBase()) * 3.6);
+        vitesseMoyenne = Double.valueOf(((int) (vitesseMoyenne * 1000)) / 1000);
         distanceNb = ((int) distanceNb) / 1000;
+        vitesseMaxNb = ((int) (vitesseMaxNb * 1000)) / 1000;
         Track track = new Track(vitesseMoyenne, Double.valueOf(vitesseMaxNb), Double.valueOf(distanceNb), time, new LatLng(locations.get(0).getLatitude(), locations.get(0).getLongitude()), new LatLng(getLastLocation().getLatitude(), getLastLocation().getLongitude()), dateDebut.toString());
         DataBase db = new DataBase(getActivity().getApplicationContext(), DataBase.BDD_NAME, null, DataBase.BDD_VERSION);
         db.putNewActivite(track);

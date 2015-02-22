@@ -49,17 +49,17 @@ public class HistoriqueFragment extends Fragment implements AbsListView.OnItemCl
      * fragment (e.g. upon screen orientation changes).
      */
     public HistoriqueFragment() {
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         DataBase db = new DataBase(getActivity().getApplicationContext(), DataBase.BDD_NAME, null, DataBase.BDD_VERSION);
         tracks = new ArrayList<HashMap<String, String>>();
         ArrayList<Track> ts = db.getActivites();
         for (Track it : ts) {
             tracks.add(it.hashMap());
         }
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Override
