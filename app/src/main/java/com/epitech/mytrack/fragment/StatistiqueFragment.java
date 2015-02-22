@@ -10,7 +10,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.epitech.mytrack.R;
+import com.epitech.mytrack.Track;
+import com.epitech.mytrack.bdd.DataBase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -27,6 +30,7 @@ public class StatistiqueFragment extends Fragment {
 
     private TextView vitMoyenne;
     private TextView vitMax;
+    private TextView time;
     private TextView distance;
     private TextView trackNb;
 
@@ -37,17 +41,36 @@ public class StatistiqueFragment extends Fragment {
     }
 
     public StatistiqueFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataBase db = new DataBase(getActivity().getApplicationContext(), DataBase.BDD_NAME, null, DataBase.BDD_VERSION);
+        ArrayList<Track> ts = db.getActivites();
+
+        Double vitMoy = 0.0;
+        Double vitMax = 0.0;
+        Double distance = 0.0;
+        Double time = 0.0;
+        Double size = 0.0;
+
+        for (Track it : ts) {
+            vitMoy += it.getVitMoyenne();
+            if (it.getVitMax() > vitMax)
+                vitMax = it.getVitMax();
+            distance += it.getDistance();
+            time += it.getTime();
+            size += 1.0;
+        }
+
         stats = new HashMap<String, Double>();
-        stats.put("vitMoyenne", 10.0);
-        stats.put("vitMax", 15.0);
-        stats.put("distance", 25.0);
-        stats.put("trackNb", 3.0);
+        stats.put("vitMoyenne", vitMoy);
+        stats.put("vitMax", vitMax);
+        stats.put("time", time);
+        stats.put("distance", distance);
+        stats.put("trackNb", size);
     }
 
     @Override
@@ -59,6 +82,8 @@ public class StatistiqueFragment extends Fragment {
         vitMoyenne.setText(stats.get("vitMoyenne") + " km/h");
         vitMax = (TextView)v.findViewById(R.id.vitMaxNb);
         vitMax.setText(stats.get("vitMax") + " km/h");
+        time = (TextView)v.findViewById(R.id.timeNb);
+        time.setText(stats.get("time") + " h");
         distance = (TextView)v.findViewById(R.id.distanceNb);
         distance.setText(stats.get("distance") + " km");
         trackNb = (TextView)v.findViewById(R.id.trackNb);

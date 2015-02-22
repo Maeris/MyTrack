@@ -33,6 +33,7 @@
     <string name="descStatistique">Statistiques depuis le debut d\'utilisation de l\'application</string>
     <string name="stat_vitMoyenne">Vitesse moyenne : </string>
     <string name="stat_vitMax">Vitesse maximum : </string>
+    <string name="stat_time">Temps total : </string>
     <string name="stat_distance">Distance parcourue : </string>
     <string name="stat_trackNb">Nombre de parcours effectué(s) : </string>
 </resources>

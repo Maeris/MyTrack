@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.epitech.mytrack.R;
 
 import com.epitech.mytrack.Track;
+import com.epitech.mytrack.bdd.DataBase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,9 +49,12 @@ public class HistoriqueFragment extends Fragment implements AbsListView.OnItemCl
      * fragment (e.g. upon screen orientation changes).
      */
     public HistoriqueFragment() {
+        DataBase db = new DataBase(getActivity().getApplicationContext(), DataBase.BDD_NAME, null, DataBase.BDD_VERSION);
         tracks = new ArrayList<HashMap<String, String>>();
-        tracks.add(new Track(10.0, 15.0, 50.0, 10.0, "Lille", "Faches").hashMap());
-        tracks.add(new Track(10.0, 15.0, 50.0, 10.0, "Faches", "Lille").hashMap());
+        ArrayList<Track> ts = db.getActivites();
+        for (Track it : ts) {
+            tracks.add(it.hashMap());
+        }
     }
 
     @Override
