@@ -10,17 +10,20 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.epitech.mytrack.R;
 
 import com.epitech.mytrack.Track;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class HistoriqueFragment extends Fragment implements AbsListView.OnItemClickListener {
 
-    private static List<Track> tracks;
+    private static ArrayList<HashMap<String, String>> tracks;
 
     private OnFragmentInteractionListener mListener;
 
@@ -33,7 +36,7 @@ public class HistoriqueFragment extends Fragment implements AbsListView.OnItemCl
      * The Adapter which will be used to populate the ListView/GridView with
      * Views.
      */
-    private ListAdapter mAdapter;
+    private SimpleAdapter mAdapter;
 
     public static HistoriqueFragment newInstance() {
         return new HistoriqueFragment();
@@ -44,16 +47,20 @@ public class HistoriqueFragment extends Fragment implements AbsListView.OnItemCl
      * fragment (e.g. upon screen orientation changes).
      */
     public HistoriqueFragment() {
-        tracks.add(new Track(10.0, 15.0, 50.0, "Lille", "Faches"));
-        tracks.add(new Track(10.0, 15.0, 50.0, "Faches", "Lille"));
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("startPoint", "Lille");
+        map.put("endPoint", "Faches");
+        tracks.add(map);
+//        tracks.add(new Track(10.0, 15.0, 50.0, "Lille", "Faches"));
+//        tracks.add(new Track(10.0, 15.0, 50.0, "Faches", "Lille"));
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mAdapter = new ArrayAdapter<Track>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, this.tracks);
+        mAdapter = new SimpleAdapter(getActivity().getBaseContext(), tracks, R.layout.item_historique,
+                new String[]{"startPoint", "endPoint"}, new int[]{R.id.startPoint, R.id.endPoint});
     }
 
     @Override
@@ -93,7 +100,7 @@ public class HistoriqueFragment extends Fragment implements AbsListView.OnItemCl
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (null != mListener) {
-            mListener.onFragmentInteraction(tracks.get(position));
+            mListener.onFragmentInteraction(new Track());
         }
     }
 

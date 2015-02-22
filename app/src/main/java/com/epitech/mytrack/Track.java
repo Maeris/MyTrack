@@ -12,6 +12,9 @@ public class Track {
     private String startPoint;
     private String endPoint;
 
+    public Track() {
+    }
+
     public Track(Double vitMoyenne, Double vitMax, Double distance, String startPoint, String endPoint)
     {
         this.vitMoyenne = vitMoyenne;
