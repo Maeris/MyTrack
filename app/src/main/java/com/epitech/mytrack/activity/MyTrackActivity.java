@@ -2,7 +2,6 @@ package com.epitech.mytrack.activity;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -15,16 +14,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 
+import com.epitech.mytrack.Track;
 import com.epitech.mytrack.fragment.ActiviteFragment;
 import com.epitech.mytrack.fragment.HistoriqueFragment;
 import com.epitech.mytrack.fragment.NavigationDrawerFragment;
 import com.epitech.mytrack.R;
+import com.epitech.mytrack.fragment.StatistiqueFragment;
 
 
 public class MyTrackActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks,
         ActiviteFragment.OnFragmentInteractionListener,
-        HistoriqueFragment.OnFragmentInteractionListener {
+        HistoriqueFragment.OnFragmentInteractionListener,
+        StatistiqueFragment.OnFragmentInteractionListener {
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
@@ -56,6 +58,9 @@ public class MyTrackActivity extends ActionBarActivity
             case 1:
                 fragment = HistoriqueFragment.newInstance();
                 break;
+            case 2:
+                fragment = StatistiqueFragment.newInstance();
+                break;
             default:
                 fragment = new ActiviteFragment();
                 break;
@@ -72,6 +77,9 @@ public class MyTrackActivity extends ActionBarActivity
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);
+                break;
+            case 3:
+                mTitle = getString(R.string.title_section3);
                 break;
         }
     }
@@ -102,6 +110,11 @@ public class MyTrackActivity extends ActionBarActivity
 
     @Override
     public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Track track) {
 
     }
 

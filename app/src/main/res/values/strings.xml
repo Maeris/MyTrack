@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="placeholder">placeholder</string>
     <string name="app_name">MyTrack</string>
     <string name="title_section1">Activité</string>
     <string name="title_section2">Historique</string>
@@ -16,6 +17,21 @@
     <string name="default_vitesse_moyenne">0 km/h</string>
     <string name="duree">Durée</string>
     <string name="default_duree">00:00:00</string>
-    <string name="demarrage_activite" type="id">Demarrage de l\'activité</string>
-    <string name="fin_activite" type="id">Fin de l\'activité</string>
+    <string name="demarrage_activite">Demarrage de l\'activité</string>
+    <string name="fin_activite">Fin de l\'activité</string>
+    <string name="trackStat">Nombre de parcours effectué(s) </string>
+    <string name="title_section3">Statistiques</string>
+    <!-- Histo -->
+    <string name="histo_startPoint">Depart : </string>
+    <string name="histo_endPoint">Fin : </string>
+    <string name="histo_time">Temps : </string>
+    <string name="histo_vitMoy">Vit. Moyenne : </string>
+    <string name="histo_vitMax">Vit. Maximum : </string>
+    <string name="histo_distance">Distance : </string>
+    <!-- Stats -->
+    <string name="descStatistique">Statistiques depuis le debut d\'utilisation de l\'application</string>
+    <string name="stat_vitMoyenne">Vitesse moyenne : </string>
+    <string name="stat_vitMax">Vitesse maximum : </string>
+    <string name="stat_distance">Distance parcourue : </string>
+    <string name="stat_trackNb">Nombre de parcours effectué(s) : </string>
 </resources>
