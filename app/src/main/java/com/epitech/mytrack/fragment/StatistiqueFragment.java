@@ -66,7 +66,7 @@ public class StatistiqueFragment extends Fragment {
         }
 
         stats = new HashMap<String, Double>();
-        stats.put("vitMoyenne", vitMoy);
+        stats.put("vitMoyenne", vitMoy / size);
         stats.put("vitMax", vitMax);
         stats.put("time", time);
         stats.put("distance", distance);
