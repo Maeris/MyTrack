@@ -15,11 +15,10 @@
     <string name="default_vitesse">0 km/h</string>
     <string name="default_distance">0 km</string>
     <string name="default_vitesse_moyenne">0 km/h</string>
-    <string name="desc_statistique">Statistique depuis le debut d\'utilisation de l\'application</string>
     <string name="trackStat">Nombre de parcoures effectue(s) </string>
     <string name="title_section3">Statistique</string>
     <!-- Stats -->
-    <string name="descStatistique">Statistique depuis le debut d'utilisation de l'application</string>
+    <string name="descStatistique">Statistique depuis le debut d\'utilisation de l\'application</string>
     <string name="stat_vitMoyenne">Vitesse moyenne: </string>
     <string name="stat_vitMax">Vitesse maximum: </string>
     <string name="stat_distance">Distance parcourue: </string>
