@@ -25,7 +25,8 @@ import com.epitech.mytrack.fragment.StatistiqueFragment;
 public class MyTrackActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks,
         ActiviteFragment.OnFragmentInteractionListener,
-        HistoriqueFragment.OnFragmentInteractionListener {
+        HistoriqueFragment.OnFragmentInteractionListener,
+        StatistiqueFragment.OnFragmentInteractionListener {
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
 

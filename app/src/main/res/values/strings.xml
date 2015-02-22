@@ -17,6 +17,13 @@
     <string name="default_vitesse_moyenne">0 km/h</string>
     <string name="trackStat">Nombre de parcoures effectue(s) </string>
     <string name="title_section3">Statistique</string>
+    <!-- Histo -->
+    <string name="histo_startPoint">Depart: </string>
+    <string name="histo_endPoint">Fin: </string>
+    <string name="histo_time">Temps: </string>
+    <string name="histo_vitMoy">Vit. Moyenne: </string>
+    <string name="histo_vitMax">Vit. Maximum: </string>
+    <string name="histo_distance">Distance: </string>
     <!-- Stats -->
     <string name="descStatistique">Statistique depuis le debut d\'utilisation de l\'application</string>
     <string name="stat_vitMoyenne">Vitesse moyenne: </string>

@@ -4,12 +4,10 @@
     android:layout_height="match_parent"
     tools:context="com.epitech.mytrack.fragment.HistoriqueFragment">
 
-    <LinearLayout
+    <ListView
+        android:id="@+id/list"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:id="@+id/historiqueList">
-
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"/>
 
 </RelativeLayout>

@@ -10,6 +10,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ public class HistoriqueFragment extends Fragment implements AbsListView.OnItemCl
     /**
      * The fragment's ListView/GridView.
      */
-    private AbsListView mListView;
+    private ListView mListView;
 
     /**
      * The Adapter which will be used to populate the ListView/GridView with
@@ -47,20 +48,14 @@ public class HistoriqueFragment extends Fragment implements AbsListView.OnItemCl
      * fragment (e.g. upon screen orientation changes).
      */
     public HistoriqueFragment() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("startPoint", "Lille");
-        map.put("endPoint", "Faches");
-        tracks.add(map);
-//        tracks.add(new Track(10.0, 15.0, 50.0, "Lille", "Faches"));
-//        tracks.add(new Track(10.0, 15.0, 50.0, "Faches", "Lille"));
+        tracks = new ArrayList<HashMap<String, String>>();
+        tracks.add(new Track(10.0, 15.0, 50.0, 10.0, "Lille", "Faches").hashMap());
+        tracks.add(new Track(10.0, 15.0, 50.0, 10.0, "Faches", "Lille").hashMap());
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mAdapter = new SimpleAdapter(getActivity().getBaseContext(), tracks, R.layout.item_historique,
-                new String[]{"startPoint", "endPoint"}, new int[]{R.id.startPoint, R.id.endPoint});
     }
 
     @Override
@@ -68,8 +63,11 @@ public class HistoriqueFragment extends Fragment implements AbsListView.OnItemCl
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_historique, container, false);
 
+        mAdapter = new SimpleAdapter(getActivity().getBaseContext(), tracks, R.layout.item_historique,
+                new String[]{"startPoint", "endPoint", "time", "vitMoy", "vitMax", "distance"}, new int[]{R.id.startPoint, R.id.endPoint, R.id.time, R.id.vitMoy, R.id.vitMax, R.id.distance});
+
         // Set the adapter
-        mListView = (AbsListView) view.findViewById(android.R.id.list);
+        mListView = (ListView) view.findViewById(R.id.list);
 
         mListView.setAdapter(mAdapter);
 

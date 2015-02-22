@@ -43,6 +43,7 @@ public class StatistiqueFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        stats = new HashMap<String, Double>();
         stats.put("vitMoyenne", 10.0);
         stats.put("vitMax", 15.0);
         stats.put("distance", 25.0);
@@ -58,10 +59,11 @@ public class StatistiqueFragment extends Fragment {
         vitMoyenne.setText(stats.get("vitMoyenne") + " km/h");
         vitMax = (TextView)v.findViewById(R.id.vitMaxNb);
         vitMax.setText(stats.get("vitMax") + " km/h");
-        distance = (TextView)v.findViewById(R.id.distance);
+        distance = (TextView)v.findViewById(R.id.distanceNb);
         distance.setText(stats.get("distance") + " km");
         trackNb = (TextView)v.findViewById(R.id.trackNb);
-        trackNb.setText(stats.get("trackNb").toString());
+        Integer track = stats.get("trackNb").intValue();
+        trackNb.setText(track.toString());
         return v;
     }
 
