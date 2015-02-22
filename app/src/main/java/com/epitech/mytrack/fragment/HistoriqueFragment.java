@@ -64,7 +64,7 @@ public class HistoriqueFragment extends Fragment implements AbsListView.OnItemCl
         View view = inflater.inflate(R.layout.fragment_historique, container, false);
 
         mAdapter = new SimpleAdapter(getActivity().getBaseContext(), tracks, R.layout.item_historique,
-                new String[]{"startPoint", "endPoint", "time", "vitMoy", "vitMax", "distance"}, new int[]{R.id.startPoint, R.id.endPoint, R.id.time, R.id.vitMoy, R.id.vitMax, R.id.distance});
+                new String[]{"startPoint", "endPoint", "time", "vitMoy", "vitMax", "distance", "date"}, new int[]{R.id.startPoint, R.id.endPoint, R.id.time, R.id.vitMoy, R.id.vitMax, R.id.distance, R.id.date});
 
         // Set the adapter
         mListView = (ListView) view.findViewById(R.id.list);
