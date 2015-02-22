@@ -5,6 +5,7 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epitech.mytrack.R;
+import com.epitech.mytrack.Track;
+import com.epitech.mytrack.bdd.DataBase;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderApi;
@@ -173,6 +176,13 @@ public class ActiviteFragment extends Fragment implements
         duree.stop();
         // TODO
         // long elapsedMillis = SystemClock.elapsedRealtime() - chronometerInstance.getBase();
+
+        Double time = Double.valueOf(SystemClock.elapsedRealtime() - duree.getBase() / 1000 /3600);
+        Double vitesseMoyenne = Double.valueOf(distanceNb / (SystemClock.elapsedRealtime() - duree.getBase()) * 3.6);
+        distanceNb = ((int) distanceNb) / 1000;
+        Track track = new Track(vitesseMoyenne, Double.valueOf(vitesseMaxNb), Double.valueOf(distanceNb), time, new LatLng(locations.get(0).getLatitude(), locations.get(0).getLongitude()), new LatLng(getLastLocation().getLatitude(), getLastLocation().getLongitude()), dateDebut.toString());
+        DataBase db = new DataBase(getActivity().getApplicationContext(), DataBase.BDD_NAME, null, DataBase.BDD_VERSION);
+        db.putNewActivite(track);
         stopLocationUpdates();
         Toast.makeText(getActivity().getApplicationContext(), getResources().getText(R.string.fin_activite), Toast.LENGTH_SHORT).show();
     }
